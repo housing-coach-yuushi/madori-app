@@ -9,7 +9,6 @@ dist/*
 app/*
 .cache/*
 3D-Models-Internet/
-TextureSources/*
 
 __pycache__
 package-lock.json

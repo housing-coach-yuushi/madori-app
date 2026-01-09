@@ -1,0 +1,6 @@
+{
+    "buildCommand": "npm run app-production",
+    "outputDirectory": "app",
+    "framework": null,
+    "installCommand": "npm install"
+}

@@ -1,4 +1,4 @@
-import { availableDimUnits, dimCentiMeter, WALL_STANDARD_HEIGHT, WALL_STANDARD_THICKNESS } from './constants.js';
+import { availableDimUnits, dimCentiMeter, dimMilliMeter, WALL_STANDARD_HEIGHT, WALL_STANDARD_THICKNESS } from './constants.js';
 import { EventDispatcher } from 'three';
 import { EVENT_CHANGED } from './events.js';
 
@@ -33,15 +33,17 @@ export const magneticSnap = 'magneticSnap';
 
 
 
-export var config = { dimUnit: dimCentiMeter, wallHeight: WALL_STANDARD_HEIGHT, 
-    wallThickness: WALL_STANDARD_THICKNESS, systemUI: false, 
-    scale: 1, snapToGrid: true, 
-    dragOnlyX: false, dragOnlyY: false, 
-    snapTolerance: 50, gridSpacing: 50, 
-    directionalDrag: true, 
+export var config = {
+    dimUnit: dimMilliMeter, wallHeight: WALL_STANDARD_HEIGHT,
+    wallThickness: WALL_STANDARD_THICKNESS, systemUI: false,
+    scale: 1, snapToGrid: true,
+    dragOnlyX: false, dragOnlyY: false,
+    snapTolerance: 50, gridSpacing: 90.9,
+    directionalDrag: true,
     magneticSnap: true, itemStatistics: true,
-    boundsX: 500, boundsY: 500, 
-    viewBounds: 5000};
+    boundsX: 500, boundsY: 500,
+    viewBounds: 5000
+};
 
 export var wallInformation = { exterior: false, interior: false, midline: true, labels: true, exteriorlabel: 'e:', interiorlabel: 'i:', midlinelabel: 'm:' };
 
@@ -74,8 +76,8 @@ export class Configuration extends EventDispatcher {
 
     /** Set a configuration parameter. */
     static setValue(key, value) {
-        if(key == configDimUnit){
-            if(!availableDimUnits.includes(value)){
+        if (key == configDimUnit) {
+            if (!availableDimUnits.includes(value)) {
                 throw new Error(`Unknown dimensional units option: ${value}. Possible values are ${availableDimUnits}`);
             }
         }
