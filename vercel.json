@@ -2,5 +2,20 @@
     "buildCommand": "npm run app-production",
     "outputDirectory": "app",
     "framework": null,
-    "installCommand": "npm install"
+    "installCommand": "npm install",
+    "headers": [
+        {
+            "source": "/models/(.*)",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/octet-stream"
+                },
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                }
+            ]
+        }
+    ]
 }
