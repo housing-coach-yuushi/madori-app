@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "description": "Floor plan application for Marori",
     "scripts": {
-        "copy-static": "mkdir -p app && cp -R static/* app/",
-        "app-dev": "npm run copy-static && parcel src/index.html --dist-dir app/",
+        "copy-static": "cp -R static/* app/",
+        "app-dev": "parcel src/index.html --dist-dir app/ && npm run copy-static",
         "for-git-demo-dev": "parcel src/index.html --dist-dir demo/ --public-url ./",
-        "app-production": "npm run copy-static && parcel build src/index.html --dist-dir app/ --no-source-maps --experimental-scope-hoisting",
+        "app-production": "parcel build src/index.html --dist-dir app/ --no-source-maps && npm run copy-static",
         "for-git-demo-production": "parcel build src/index.html --dist-dir demo/ --no-source-maps --public-url https://aalavandhaann.github.io/blueprint-js/demo/  --no-content-hash",
         "frameworkonly-dev": "parcel build src/scripts/blueprint.js --global BP3DJS --no-source-maps --dist-dir bin/ --target browser --out-file bp3djs.js  --no-optimize  --no-content-hash",
         "frameworkonly-production": "parcel build src/scripts/blueprint.js  --global BP3DJS --no-source-maps --dist-dir bin/ --target browser --out-file bp3djs.js  --no-content-hash",
